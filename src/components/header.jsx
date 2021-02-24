@@ -49,7 +49,7 @@ class Header extends Component {
 
                 <div className="header__right">
                     <div className="header__info">
-                        <Avatar/>
+                        <Avatar src="https://scontent.fbeg1-1.fna.fbcdn.net/v/t1.0-9/11866310_1163006293728660_6962940529323370142_n.jpg?_nc_cat=107&ccb=3&_nc_sid=174925&_nc_ohc=v9imRJqcb-4AX9F0hEP&_nc_ht=scontent.fbeg1-1.fna&oh=c93477c16d8acd995dfe6446192f5ccc&oe=605D2945"/>
                         <h4>Filip Beric</h4>
                     </div>
                     
