@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import Header from './components/header';
 import Sidebar from './components/sidebar';
 import Feed from "./components/feed";
+import Widgets from "./components/widgets";
 
 class App extends Component {
     render() { 
@@ -12,6 +13,7 @@ class App extends Component {
             <div className="app__body">
                 <Sidebar/>
                 <Feed/>
+                <Widgets/>
             </div>
         </div> );
     }
