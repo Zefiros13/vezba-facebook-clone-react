@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import PostUploader from "./postUploader";
+import StoryReel from "./storyReel";
 import Post from "./post";
 import db from "../firebase";
 
@@ -15,6 +16,7 @@ function Feed() {
     }, []);
         return ( 
             <div className="feed">
+                <StoryReel/>
                 <PostUploader/>
                 {posts.map(post => (
                     <Post
