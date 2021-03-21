@@ -4,6 +4,8 @@ import VideocamIcon from "@material-ui/icons/Videocam";
 import PhotoLibraryIcon from "@material-ui/icons/PhotoLibrary";
 import InsertEmoticonIcon from "@material-ui/icons/InsertEmoticon";
 import { useStateValue } from '../stateProvider';
+import db from "../firebase";
+import firebase from "firebase";
 import "../css/PostUploader.css";
 
  function PostUploader() {
@@ -15,6 +17,14 @@ import "../css/PostUploader.css";
         const handleSubmit = e => {
             e.preventDefault();
 
+            db.collection("posts").add({
+                title: input,
+                timestamp: firebase.firestore.FieldValue.serverTimestamp(),
+                profilePicture: user.photoURL,
+                username: user.displayName,
+                image: imageUrl,
+            });
+            
             setInput("");
             setImageUrl("");
         }
