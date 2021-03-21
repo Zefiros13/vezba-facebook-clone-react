@@ -2,28 +2,32 @@ import React, { Component } from 'react';
 import "../css/Login.css";
 import { Button } from '@material-ui/core';
 import { auth, provider } from "../firebase";
+import { useStateValue } from './../stateProvider';
+import { actionTypes } from "../reducer";
 
-class Login extends Component {
-    state = {  }
-    render() { 
-        const signIn = () => {
-            auth.signInWithPopup(provider)
-            .then(result => {
-                console.log(result);
+function Login() {
+    const [state, dispatch ] = useStateValue();
+
+    const signIn = () => {
+        auth.signInWithPopup(provider)
+        .then(result => {
+            dispatch({
+                type: actionTypes.SET_USER,
+                user: result.user,
             })
-            .catch(error => alert(error.message));
-        };
-        
-        return (
-            <div className="login">
-                <div className="login__logo">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/51/Facebook_f_logo_%282019%29.svg/1200px-Facebook_f_logo_%282019%29.svg.png" alt=""/>
-                    <img src="https://www.logo.wine/a/logo/Facebook/Facebook-Logo.wine.svg" alt=""/>
-                    <Button type="submit" onClick={signIn} >Sign In</Button>
-                </div>
+        })
+        .catch(error => alert(error.message));
+    };
+    
+    return (
+        <div className="login">
+            <div className="login__logo">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/51/Facebook_f_logo_%282019%29.svg/1200px-Facebook_f_logo_%282019%29.svg.png" alt=""/>
+                <img src="https://www.logo.wine/a/logo/Facebook/Facebook-Logo.wine.svg" alt=""/>
+                <Button type="submit" onClick={signIn} >Sign In</Button>
             </div>
-          );
-    }
+        </div>
+        );
 }
  
 export default Login;

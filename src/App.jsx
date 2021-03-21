@@ -4,15 +4,16 @@ import Sidebar from './components/sidebar';
 import Feed from "./components/feed";
 import Widgets from "./components/widgets";
 import Login from "./components/login";
+import { useStateValue } from './stateProvider';
 
-class App extends Component {
-    render() { 
-        const user = null;
+function App() {
+        const [{user}, dispatch] = useStateValue();
+
         return ( 
         <div className="app">
-            {!user ? 
-            <Login/>
-             : (
+            {!user ? (
+                <Login/>
+            ) : (
                 <>
                     <Header/>
 
@@ -24,7 +25,6 @@ class App extends Component {
                 </>
             )}
         </div> );
-    }
 }
  
 export default App;

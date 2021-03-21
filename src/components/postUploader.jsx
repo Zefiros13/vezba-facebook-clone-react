@@ -3,10 +3,12 @@ import {Avatar} from "@material-ui/core";
 import VideocamIcon from "@material-ui/icons/Videocam";
 import PhotoLibraryIcon from "@material-ui/icons/PhotoLibrary";
 import InsertEmoticonIcon from "@material-ui/icons/InsertEmoticon";
+import { useStateValue } from '../stateProvider';
 import "../css/PostUploader.css";
 
  function PostUploader() {
 
+    const [{user}, dispatch] = useStateValue();
     const [input, setInput] = useState("");
     const [imageUrl, setImageUrl] = useState("");
 
@@ -20,12 +22,12 @@ import "../css/PostUploader.css";
         return ( 
             <div className="postUploader">
                 <div className="postUploader__top">
-                    <Avatar src="https://scontent.fbeg1-1.fna.fbcdn.net/v/t1.0-9/11866310_1163006293728660_6962940529323370142_n.jpg?_nc_cat=107&ccb=3&_nc_sid=174925&_nc_ohc=v9imRJqcb-4AX9F0hEP&_nc_ht=scontent.fbeg1-1.fna&oh=c93477c16d8acd995dfe6446192f5ccc&oe=605D2945"/>
+                    <Avatar src={user.photoURL}/>
                     <form>
                         <input 
                             value={input}
                             onChange={e => setInput(e.target.value)}
-                            className="postUploader__input" placeholder="Whats on your mind, Filip?" />
+                            className="postUploader__input" placeholder={`Whats on your mind, ${user.displayName}?`} />
                         <input 
                             value={imageUrl}
                             onChange={e => setImageUrl(e.target.value)}
