@@ -1,0 +1,22 @@
+.birthdays {
+    color:slategray;
+    margin:10px;
+    
+}
+
+.birthdays__content {
+    display: flex;
+}
+
+.birthdays__content > img {
+    height: 50px;
+    width: 50px;
+    margin: 10px;
+}
+
+.birthdays__content > h3 {
+    margin: 10px;
+    font-weight: 400;
+    font-size: medium;
+    color: #151515;
+}

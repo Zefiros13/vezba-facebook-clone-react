@@ -1,9 +1,11 @@
 import React, { Component } from 'react';
+import Birthdays from "./birthdays";
+import Chat from "./chat";
 
 const Widgets = () => {
     return ( 
         <React.Fragment style={ {display: "flex" } }>
-            <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v10.0&appId=630757761019942&autoLogAppEvents=1" nonce="BI50D4OB"></script>
+            {/* <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v10.0&appId=630757761019942&autoLogAppEvents=1" nonce="BI50D4OB"></script>
             <div>
                 <iframe
                 src="https://www.facebook.com/facebook"
@@ -15,18 +17,10 @@ const Widgets = () => {
                 allowTransparency="true"
                 allow="encrypted-media"
                 />
-            </div>
-       
-            
-{/* 
-            <iframe
-            src="https://www.youtube.com/embed/5GkF7J0sC1w" 
-            width="340" 
-            height="100%"  
-            frameborder="0" 
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-            allowfullscreen
-            /> */}
+            </div> */}
+            <Birthdays/>
+            <Chat/>
+
         </React.Fragment>
 
      );
