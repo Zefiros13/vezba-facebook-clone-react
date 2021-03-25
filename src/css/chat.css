@@ -1,0 +1,15 @@
+.chat {
+    color:slategray;
+    margin:10px;
+    display: flex;
+}
+
+.chat__icons {
+    display: flex;
+    align-items: center;
+}
+
+.chat__heads {
+    display: flex;
+    flex-direction: column;
+}

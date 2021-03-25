@@ -1,7 +1,6 @@
 .birthdays {
     color:slategray;
     margin:10px;
-    
 }
 
 .birthdays__content {
@@ -18,5 +17,5 @@
     margin: 10px;
     font-weight: 400;
     font-size: medium;
-    color: #151515;
+    color: #303030;
 }

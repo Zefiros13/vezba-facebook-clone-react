@@ -1,0 +1,21 @@
+.chatHead {
+    display: flex;
+    margin: 10px;
+}
+
+.chatHead__status {
+    background-color: rgb(0, 252, 13);
+    border-radius: 50px;
+    width: 10px;
+    height: 10px;
+    position: relative;
+    left: -10px;
+    top: 32px;
+}
+
+.chatHead > h4 {
+    margin-left: 10px;
+    justify-content: center;
+    align-items: center;
+    color: #303030;
+}
